@@ -1,0 +1,27 @@
+.hero-container {
+    padding: 80px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    justify-content: center;
+  }
+  .name {
+    text-align: center;
+    color: #0044A6
+  }
+  
+  .hero-card {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #707070;
+    height: 442px;
+    line-height: 0.5;
+    padding: 15px;
+  }
+  
+  .hero-card img {
+    width: 100%;
+    max-width: 391px; 
+    height: 209px;
+  }
+  

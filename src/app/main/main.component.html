@@ -1,0 +1,15 @@
+<div *ngIf="heroes.length > 0">
+    <h2>Random Superheroes</h2>
+    <div class="hero-container">
+      <div class="hero-card" *ngFor="let hero of heroes">
+        <img [src]="hero.images?.sm" alt="{{ hero.name }} image">
+        <h3 class="name">{{ hero.name }}</h3>
+        <p>Intelligence: {{ hero.powerstats?.intelligence }}</p>
+        <p>Speed: {{ hero.powerstats?.speed }}</p>
+        <p>Power: {{ hero.powerstats?.power }}</p>
+        <p>Gender: {{ hero.appearance?.gender }}</p>
+        <p>Race: {{ hero.appearance?.race || 'No definido' }}</p>
+      </div>
+    </div>
+  </div>
+  
