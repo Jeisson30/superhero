@@ -25,3 +25,30 @@
     height: 209px;
   }
   
+  .search-container {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px; 
+    margin-bottom: 20px; 
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .fa-search {
+    position: absolute;
+    right: 10px;
+    color: #999;
+  }
+  
+  .no-results {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  

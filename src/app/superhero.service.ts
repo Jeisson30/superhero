@@ -7,6 +7,9 @@ import { Superhero } from './superhero.model';
   providedIn: 'root'
 })
 export class SuperheroService {
+  searchHeroesByName(searchTerm: string) {
+    throw new Error('Method not implemented.');
+  }
 
   private baseUrl = 'https://cdn.jsdelivr.net/gh/akabab/superhero-api@0.3.0/api';
 

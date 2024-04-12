@@ -9,6 +9,7 @@ import { Superhero } from '../superhero.model';
 })
 export class MainComponent implements OnInit {
   heroes: Superhero[] = [];
+  searchTerm: string = '';
 
   constructor(private superheroService: SuperheroService) { }
 
@@ -34,5 +35,28 @@ export class MainComponent implements OnInit {
     }
 
     return randomHeroes;
+  }
+
+  searchHeroes(): void {
+    if (this.searchTerm.trim() === '') {
+      this.superheroService.getAllSuperheroes().subscribe(
+        (heroes: Superhero[]) => {
+          this.heroes = this.getRandomHeroes(heroes);
+        }
+      );
+    } else {
+      this.superheroService.getAllSuperheroes().subscribe(
+        (heroes: Superhero[]) => {
+          this.heroes = heroes.filter(hero => hero.name?.toLowerCase().includes(this.searchTerm.toLowerCase()));
+        }
+      );
+    }
+  }
+  showRandomHeroes(): void {
+    this.superheroService.getAllSuperheroes().subscribe(
+      (heroes: Superhero[]) => {
+        this.heroes = this.getRandomHeroes(heroes);
+      }
+    );
   }
 }

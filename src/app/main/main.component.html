@@ -1,5 +1,8 @@
-<div *ngIf="heroes.length > 0">
-    <h2>Random Superheroes</h2>
+<div *ngIf="heroes.length > 0" class="main-container">
+    <div class="search-container">
+      <input type="text" [(ngModel)]="searchTerm" placeholder="Buscar personaje" (input)="searchHeroes()">
+      <i class="fa fa-search"></i>
+    </div>
     <div class="hero-container">
       <div class="hero-card" *ngFor="let hero of heroes">
         <img [src]="hero.images?.sm" alt="{{ hero.name }} image">
@@ -13,3 +16,7 @@
     </div>
   </div>
   
+  <div *ngIf="heroes.length === 0" class="no-results">
+    <p>No se encontraron héroes que coincidan con la búsqueda "{{ searchTerm }}"</p>
+    <button (click)="showRandomHeroes()">Regresar</button>
+  </div>
