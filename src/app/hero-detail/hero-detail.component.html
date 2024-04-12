@@ -1,0 +1,27 @@
+<div *ngIf="hero" class="hero-detail-container">
+    <img [src]="hero.images?.lg" alt="{{ hero.name }} image" class="hero-image">
+    <div class="hero-details">
+      <h2 class="hero-name">{{ hero.name }}</h2>
+      <div class="detail-row">
+        <p class="detail-label">Biography:</p>
+        <p class="detail-value">{{ hero.biography?.fullName }}</p>
+        <p class="detail-value">{{ hero.biography?.alterEgos }}</p>
+        <p class="detail-value">{{ hero.biography?.aliases }}</p>
+        <p class="detail-value">{{ hero.biography?.placeOfBirth }}</p>
+        <p class="detail-value">{{ hero.biography?.firstAppearance }}</p>
+        <p class="detail-value">{{ hero.biography?.publisher }}</p>
+        <p class="detail-value">{{ hero.biography?.alignment }}</p>
+      </div>
+      <div class="detail-row">
+        <p class="detail-label">Work:</p>
+        <p class="detail-value">{{ hero.work?.occupation }}</p>
+        <p class="detail-value">{{ hero.work?.base }}</p>
+      </div>
+      <div class="detail-row">
+        <p class="detail-label">Connections:</p>
+        <p class="detail-value">{{ hero.connections?.groupAffiliation }}</p>
+        <p class="detail-value">{{ hero.connections?.relatives }}</p>
+      </div>
+      <button (click)="goBack()" class="back-button">Regresar</button>
+    </div>
+  </div>

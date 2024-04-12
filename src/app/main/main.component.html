@@ -5,8 +5,10 @@
     </div>
     <div class="hero-container">
       <div class="hero-card" *ngFor="let hero of heroes">
-        <img [src]="hero.images?.sm" alt="{{ hero.name }} image">
-        <h3 class="name">{{ hero.name }}</h3>
+        <a [routerLink]="['/hero', hero.id]">
+            <img [src]="hero.images?.sm" alt="{{ hero.name }} image">
+            <h3 class="name">{{ hero.name }}</h3>
+        </a>
         <p>Intelligence: {{ hero.powerstats?.intelligence }}</p>
         <p>Speed: {{ hero.powerstats?.speed }}</p>
         <p>Power: {{ hero.powerstats?.power }}</p>
